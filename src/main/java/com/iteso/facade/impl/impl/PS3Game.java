@@ -1,6 +1,6 @@
-package com.iteso.facade.interfaces.impl;
+package com.iteso.facade.impl.impl;
 
-import com.iteso.facade.interfaces.VideoGame;
+import com.iteso.facade.impl.VideoGame;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,12 +15,16 @@ public class PS3Game implements VideoGame {
         this.name = name;
     }
 
-    public void setOnlineMode() {
-        System.out.println("Setting Online mode on " + name);
+    public String setOnlineMode() {
+        String out = "";
+        out += ("Setting Online mode on " + name);
+        return out;
     }
 
-    public void play() {
-        System.out.println("Playing " + name);
+    public String play() {
+        String out = "";
+        out += ("Playing " + name);
+        return out;
     }
 
     public String getName() {

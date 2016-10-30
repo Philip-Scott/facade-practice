@@ -1,4 +1,4 @@
-package com.iteso.facade.interfaces;
+package com.iteso.facade.impl;
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,8 +7,8 @@ package com.iteso.facade.interfaces;
  * Time: 9:14 PM
  * To change this template use File | Settings | File Templates.
  */
-public interface TV {
-    void on();
-    void off();
-    void toHDMI();
+public interface GameConsole {
+    String on();
+    String off();
+    String insertGame(VideoGame videoGame);
 }
