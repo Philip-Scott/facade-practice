@@ -1,14 +1,14 @@
-package com.iteso.facade.interfaces;
+package com.iteso.facade.impl;
 
 /**
  * Created with IntelliJ IDEA.
  * User: rvillalobos
  * Date: 11/14/13
- * Time: 9:15 PM
+ * Time: 9:14 PM
  * To change this template use File | Settings | File Templates.
  */
-public interface Router {
-    void on();
-    void off();
-    void checkInternet();
+public interface TV {
+    String on();
+    String off();
+    String toHDMI();
 }

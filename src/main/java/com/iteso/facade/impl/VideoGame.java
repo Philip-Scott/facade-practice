@@ -1,4 +1,4 @@
-package com.iteso.facade.interfaces;
+package com.iteso.facade.impl;
 
 /**
  * Created with IntelliJ IDEA.
@@ -8,7 +8,7 @@ package com.iteso.facade.interfaces;
  * To change this template use File | Settings | File Templates.
  */
 public interface VideoGame {
-    void setOnlineMode();
-    void play();
+    String setOnlineMode();
+    String play();
     String getName();
 }

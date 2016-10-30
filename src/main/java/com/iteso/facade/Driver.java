@@ -1,7 +1,7 @@
 package com.iteso.facade;
 
-import com.iteso.facade.interfaces.*;
-import com.iteso.facade.interfaces.impl.*;
+import com.iteso.facade.impl.*;
+import com.iteso.facade.impl.impl.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,15 +22,15 @@ public class Driver {
         SoundSystem bose = new Bose();
         TV tv = new SonyBravia();
 
-        VideoGameFacade videoGameFacade = new VideoGameFacade(tv, ps3,dualShock,bose,linksys,lights);
-
+       /* VideoGameFacade videoGameFacade = new VideoGameFacade(tv, ps3,dualShock,bose,linksys,lights);
         videoGameFacade.playOnlineGame("Fifa 14");
-
         videoGameFacade.stopPlayingGame();
+        videoGameFacade = new VideoGameFacade(tv, xbox,dualShock,bose,linksys,lights);
+        videoGameFacade.playOnlineGame("Gears Of Wars");*/
 
-         videoGameFacade = new VideoGameFacade(tv, xbox,dualShock,bose,linksys,lights);
-
-        videoGameFacade.playOnlineGame("Gears Of Wars");
+        MovieFacade movieFacade = new MovieFacade(tv, ps3,dualShock,bose,linksys,lights);
+        movieFacade.MovieFacadeON("Titanic");
+        movieFacade.MovieFacadeOFF();
 
     }
 

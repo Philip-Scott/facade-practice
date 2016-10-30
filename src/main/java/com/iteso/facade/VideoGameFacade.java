@@ -1,7 +1,7 @@
 package com.iteso.facade;
 
-import com.iteso.facade.interfaces.*;
-import com.iteso.facade.interfaces.impl.PS3Game;
+import com.iteso.facade.impl.*;
+import com.iteso.facade.impl.impl.PS3Game;
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,47 +34,44 @@ public class VideoGameFacade {
     }
 
 
-    public void playOnlineGame(String gameName){
-
+    public String playOnlineGame(String gameName){
+        String out = "";
         System.out.println("Turning the system ON, this may take some time");
         System.out.println();
 
-        tv.on();
-        tv.toHDMI();
-
-        console.on();
-        controller.on();
+        out += tv.on() + "\n";
+        out += tv.toHDMI() + "\n";
+        out += console.on() + "\n";
+        out += controller.on() + "\n";
         game = new PS3Game(gameName);
-        console.insertGame(game);
+        out += console.insertGame(game) + "\n";
 
-        soundSystem.on();
-        soundSystem.toOpticalEntry();
+        out += soundSystem.on() + "\n";
+        out += soundSystem.toOpticalEntry() + "\n";
+        out += router.on() + "\n";
+        out += router.checkInternet() + "\n";
 
-        router.on();
-        router.checkInternet();
+        out += lights.off() + "\n";
 
-        lights.off();
-
-        game.setOnlineMode();
-        game.play();
-        System.out.println();
-
-
+        out += game.setOnlineMode() + "\n";
+        out += game.play() + "\n";
+        System.out.println(out);
+        return out;
     }
 
-    public void stopPlayingGame(){
-
+    public String stopPlayingGame(){
+        String out ="";
         System.out.println();
         System.out.println("Turning the system OFF, this may take some time");
         System.out.println();
-        lights.on();
-        tv.off();
-        controller.off();
-        console.off();
-        soundSystem.off();
-        router.off();
-
-
+        out += lights.on() + "\n";;
+        out += tv.off() + "\n";
+        out += controller.off() + "\n";
+        out += console.off() + "\n";
+        out += soundSystem.off() + "\n";
+        out += router.off() + "\n";
+        System.out.println(out);
+        return out;
     }
 
 

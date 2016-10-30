@@ -1,8 +1,7 @@
 package com.iteso.facade;
 
-import com.iteso.facade.interfaces.*;
-import com.iteso.facade.interfaces.impl.PS3Game;
-import com.iteso.facade.interfaces.impl.SonyBravia;
+import com.iteso.facade.impl.*;
+import com.iteso.facade.impl.impl.PS3Game;
 
 /**
  * Created by Diego on 27/10/2016.
@@ -25,35 +24,33 @@ public class MovieFacade {
         this.lights = lights;
     }
 
-    public void MovieFacadeON(String FacadeName){
+    public String MovieFacadeON(String FacadeName){
+        String out = "";
         System.out.println("Starting the system ON, this may take some time");
         System.out.println();
-        tv.on();
-        tv.toHDMI();
-        console.on();
-        controller.on();
+        out += tv.on() + "\n";
+        out += tv.toHDMI() + "\n";
+        out += console.on() + "\n";
+        out += controller.on() + "\n";
         game = new PS3Game(FacadeName);
-        console.insertGame(game);
-        soundSystem.on();
-        soundSystem.toOpticalEntry();
-        router.on();
-        router.checkInternet();
-        lights.off();
-        game.play();
-        System.out.println();
+        out += console.insertGame(game) + "\n";
+        out += soundSystem.on() + "\n";
+        out += soundSystem.toOpticalEntry() + "\n";
+        out += lights.off() + "\n";
+        System.out.println(out);
+        return out;
     }
-    public void MovieFacadeOFF(){
-
+    public String MovieFacadeOFF(){
+        String out = "";
         System.out.println();
         System.out.println("Turning the movie OFF, this may take some time");
         System.out.println();
-        lights.on();
-        tv.off();
-        controller.off();
-        console.off();
-        soundSystem.off();
-        router.off();
-
-
+        out += lights.on() + "\n";;
+        out += tv.off() + "\n";
+        out += controller.off() + "\n";
+        out += console.off() + "\n";
+        out += soundSystem.off() + "\n";
+        System.out.println(out);
+        return out;
     }
 }

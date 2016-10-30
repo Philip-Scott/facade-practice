@@ -1,4 +1,4 @@
-package com.iteso.facade.interfaces;
+package com.iteso.facade.impl;
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,8 +7,7 @@ package com.iteso.facade.interfaces;
  * Time: 9:15 PM
  * To change this template use File | Settings | File Templates.
  */
-public interface SoundSystem {
-    void on();
-    void off();
-    void toOpticalEntry();
+public interface GameController {
+    String on();
+    String off();
 }
